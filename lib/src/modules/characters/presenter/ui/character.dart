@@ -81,6 +81,7 @@ class CharacterViewState extends State<CharacterView>
             ]));
   }
 
+  
   Widget _firstColumn(CharacterModel char) {
     return Expanded(
       child: Column(
