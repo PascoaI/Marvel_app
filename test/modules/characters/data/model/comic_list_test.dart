@@ -7,7 +7,6 @@ void main() {
 
   setUp(() async {
     response = {
-      "comics": {
         "available": "1",
         "returned": "2",
         "collectionURI": "C",
@@ -17,13 +16,12 @@ void main() {
             "name": "E"
           }
         ]
-      },
     };
   });
 
   group('ComicsModel Json Parser', () {
     test('[ comics ] should be parsed', () {
-      comics = ComicsModel.fromJson(response);
+      comics = ComicListModel.fromJson(response);
       expect(comics, equals(isNotNull));
     });
 

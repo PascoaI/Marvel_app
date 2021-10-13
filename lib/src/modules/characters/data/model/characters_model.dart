@@ -1,6 +1,6 @@
 import 'package:marvel_app/src/models/base_model.dart';
 import 'package:marvel_app/src/modules/characters/data/model/comic_list_model.dart';
-import 'package:marvel_app/src/modules/characters/data/model/image_model.dart';
+import 'package:marvel_app/src/modules/characters/data/model/thumbnail_model.dart';
 import 'package:marvel_app/src/modules/characters/domain/entities/characters.dart';
 import 'package:marvel_app/src/modules/characters/domain/entities/comics_list.dart';
 import 'package:marvel_app/src/modules/characters/domain/entities/image.dart';

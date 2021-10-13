@@ -5,6 +5,7 @@ import 'package:marvel_app/src/modules/characters/domain/entities/data.dart';
 void main() {
   var response;
   var characterDataContainerModel;
+  var dataContainer;
 
   setUp(() async {
     response = {
@@ -86,6 +87,10 @@ void main() {
     test('[ CharacterDataContainer ] should be parsed', () {
       characterDataContainerModel = CharacterDataContainerModel.fromJson(response);
       expect(characterDataContainerModel, equals(isNotNull));
+    });
+    test('[ Data ] should be parsed', () {
+      characterDataContainerModel = Data.fromJson(response);
+      expect(dataContainer, equals(isNotNull));
     });
 
     test('CharacterDataContainer array size should be 1 ', () {
