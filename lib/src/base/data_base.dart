@@ -5,6 +5,6 @@ import 'package:marvel_app/src/models/base_model.dart';
 typedef FromJson<T> = T Function(Map<String, dynamic> json);
 
 abstract class DataSource {
-  Future<BaseModel> call<T>(
-      {Map<String, dynamic> param, @required FromJson<T> fromJson});
+  Future<dynamic> call<T>(
+      {Map? param, @required FromJson<T>? fromJson});
 }

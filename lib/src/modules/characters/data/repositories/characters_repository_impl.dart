@@ -1,5 +1,5 @@
 import 'package:marvel_app/src/base/data_base.dart';
-import 'package:marvel_app/src/modules/characters/data/model/characters_model.dart';
+import 'package:marvel_app/src/modules/characters/data/model/data_character_model.dart';
 import 'package:marvel_app/src/modules/characters/domain/repositories/characters_repository.dart';
 
 class CharacterRepositoryImpl implements CharacterRepository {
@@ -8,13 +8,13 @@ class CharacterRepositoryImpl implements CharacterRepository {
   CharacterRepositoryImpl(this._dataSource);
 
   @override
-  Future<CharacterModel> call(String characterId) async {
-    Map<String, dynamic> parameter = Map();
+  Future<CharacterDataContainerModel> call(String characterId) async {
+    Map<String, dynamic> param = {};
 
-    parameter['characterId'] = characterId;
+    param['characterId'] = characterId;
 
     return await _dataSource(
-        param: parameter,
-        fromJson: (json) => CharacterModel.fromJson(json));
+    param: param,
+        fromJson: (json) => CharacterDataContainerModel.fromJson(json));
   }
 }

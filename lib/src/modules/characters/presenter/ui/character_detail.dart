@@ -4,19 +4,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:marvel_app/src/modules/characters/data/model/characters_model.dart';
-import 'package:share/share.dart';
-import 'package:ufcspa/src/models/create_subscription_respose.dart';
-import 'package:ufcspa/src/modules/events/data/model/event_model.dart';
-import 'package:ufcspa/src/modules/events/presenter/bloc/event_detail_bloc.dart';
-import 'package:ufcspa/src/ui/colors.dart';
-import 'package:ufcspa/src/util/date_util.dart';
-
-import 'event_schedule.dart';
+import 'package:marvel_app/src/modules/characters/presenter/bloc/character_bloc.dart';
 
 class CharacterDetail extends StatefulWidget {
   final CharacterModel char;
 
-  CharacterDetail({Key key, @required this.char}) : super(key: key);
+  const CharacterDetail({Key? key, required this.char}) : super(key: key);
 
   @override
   CharacterDetailState createState() {
@@ -26,15 +19,16 @@ class CharacterDetail extends StatefulWidget {
 
 class CharacterDetailState extends State<CharacterDetail>
     with SingleTickerProviderStateMixin {
-  CharacterDetailBloc bloc = GetIt.instance<CharacterDetailBloc>();
+  CharacterBloc bloc = GetIt.instance<CharacterBloc>();
 
+  @override
   void initState() {
     super.initState();
   }
 
   @override
   void dispose() {
-    charDetailBloc.dispose();
+    bloc.dispose();
     super.dispose();
   }
 
@@ -71,13 +65,13 @@ class CharacterDetailState extends State<CharacterDetail>
     return Expanded(
       child: ListView(
         children: <Widget>[
-          _buildImage(),
-          SizedBox(height: 16.0),
+          // _buildImage(),
+          // SizedBox(height: 16.0),
           _buildTitle(),
           SizedBox(height: 8.0),
           _buildDescription(),
-          SizedBox(height: 8.0),
-          _buildComics(),
+          // SizedBox(height: 8.0),
+          // _buildComics(),
         ],
       ),
     );
@@ -102,7 +96,7 @@ class CharacterDetailState extends State<CharacterDetail>
       width: double.infinity,
       child: Text(
         widget.char.name,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
           color: Colors.black,
         ),
@@ -116,13 +110,15 @@ class CharacterDetailState extends State<CharacterDetail>
       width: double.infinity,
       child: Text(
         widget.char.description,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
           color: Colors.black,
         ),
       ),
     );
   }
+
+
 
 
 

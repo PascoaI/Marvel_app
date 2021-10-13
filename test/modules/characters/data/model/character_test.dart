@@ -15,9 +15,13 @@ void main() {
         "extension": "E",
       },
       "comics": {
+        "available": "F",
+        "returned": "G",
+        "collectionURI": "H",
         "items": [
           {
-            "name": "F"
+            "resourceURI": "I",
+            "name": "J"
           }
         ]
       },
@@ -28,10 +32,6 @@ void main() {
     test('[ character ] should be parsed', () {
       character = CharacterModel.fromJson(response);
       expect(character, equals(isNotNull));
-    });
-
-    test('id should be [A] ', () {
-      expect(character.id, 'A');
     });
 
     test('name should be [B] ', () {

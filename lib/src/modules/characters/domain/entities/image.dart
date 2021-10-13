@@ -1,6 +1,6 @@
-class Image {
+class Thumbnail {
   final String path;
   final String extension;
 
-  Image(this.path, this.extension);
+  Thumbnail(this.path, this.extension);
 }

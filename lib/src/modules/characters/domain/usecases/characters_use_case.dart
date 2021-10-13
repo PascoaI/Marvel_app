@@ -1,9 +1,8 @@
-
-import 'package:marvel_app/src/modules/characters/data/model/characters_model.dart';
+import 'package:marvel_app/src/modules/characters/data/model/data_character_model.dart';
 import 'package:marvel_app/src/modules/characters/domain/repositories/characters_repository.dart';
 
 abstract class CharacterUseCase {
-  Future<CharacterModel> call(String characterId);
+  Future<CharacterDataContainerModel> call(String characterId);
 }
 
 class CharacterUseCaseImpl implements CharacterUseCase {
@@ -12,6 +11,6 @@ class CharacterUseCaseImpl implements CharacterUseCase {
   CharacterUseCaseImpl(this.repository);
 
   @override
-  Future<CharacterModel> call(String characterId) async =>
+  Future<CharacterDataContainerModel> call(String characterId) async =>
       repository(characterId);
 }

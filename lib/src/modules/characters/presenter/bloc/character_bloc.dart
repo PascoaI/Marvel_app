@@ -1,19 +1,17 @@
-
 import 'dart:async';
-
-import 'package:marvel_app/src/modules/characters/data/model/characters_model.dart';
+import 'package:marvel_app/src/modules/characters/data/model/data_character_model.dart';
 import 'package:marvel_app/src/modules/characters/domain/usecases/characters_use_case.dart';
 
 class CharacterBloc {
   final CharacterUseCase characterUseCase;
 
-  CharacterBloc(
-      this.characterUseCase);
+  CharacterBloc(this.characterUseCase);
 
-  final _charController =  StreamController.broadcast();
+  final _charController = StreamController.broadcast();
+
   Stream get charStream => _charController.stream;
 
-  CharacterModel response;
+  late CharacterDataContainerModel response;
 
   getCharacters(String characterId) async {
     try {
@@ -27,3 +25,4 @@ class CharacterBloc {
   dispose() {
     _charController.close();
   }
+}

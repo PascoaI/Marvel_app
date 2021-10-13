@@ -6,8 +6,7 @@ class ComicList{
   final String collectionURI;
   final List<ComicSummary> items;
 
-  ComicList(
-this.available, this.returned, this.collectionURI, this.items
+  ComicList(this.available, this.returned, this.collectionURI, this.items
 );
 
 }

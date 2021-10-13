@@ -12,7 +12,7 @@ import 'package:marvel_app/src/modules/characters/presenter/ui/character_detail.
 
 class CharacterView extends StatefulWidget {
   final String characterId;
-  const CharacterView({Key key, @required this.characterId})
+  const CharacterView({Key? key, required this.characterId})
       : super(key: key);
   @override
   CharacterViewState createState() {
@@ -30,6 +30,7 @@ class CharacterViewState extends State<CharacterView>
     bloc.getCharacters(widget.characterId);
   }
 
+  @override
   void dispose() {
     bloc.dispose();
     super.dispose();
@@ -81,7 +82,7 @@ class CharacterViewState extends State<CharacterView>
             ]));
   }
 
-  
+
   Widget _firstColumn(CharacterModel char) {
     return Expanded(
       child: Column(
@@ -105,8 +106,7 @@ class CharacterViewState extends State<CharacterView>
     );
   }
 
-  Function _onCharacterDetail(CharacterModel char) {
-
+ _onCharacterDetail(CharacterModel char) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) {

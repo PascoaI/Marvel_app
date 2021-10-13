@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:marvel_app/src/modules/characters/data/model/comics_model.dart';
+import 'package:marvel_app/src/modules/characters/data/model/comic_list_model.dart';
 
 void main() {
   var response;
