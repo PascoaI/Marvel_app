@@ -3,7 +3,7 @@ import 'package:marvel_app/src/modules/characters/data/model/comic_list_model.da
 
 void main() {
   var response;
-  var comics;
+  ComicListModel? comics;
 
   setUp(() async {
     response = {
@@ -26,11 +26,11 @@ void main() {
     });
 
     test('Available should be [1] ', () {
-      expect(comics.available, 1);
+      expect(comics!.available, 1);
     });
 
     test('items array size should be [1] ', () {
-      expect(comics.items.lenght, 1);
+      expect(comics!.items.length, 1);
     });
   });
 }

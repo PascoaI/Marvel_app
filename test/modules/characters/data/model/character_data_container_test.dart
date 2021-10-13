@@ -1,11 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:marvel_app/src/modules/characters/data/model/data_character_model.dart';
+import 'package:marvel_app/src/modules/characters/data/model/data_wrapper_model.dart';
 import 'package:marvel_app/src/modules/characters/domain/entities/data.dart';
 
 void main() {
   var response;
-  var characterDataContainerModel;
-  var dataContainer;
+  CharacterDataContainerModel? characterDataContainerModel;
+  CharacterDataWrapperModel? dataContainer;
 
   setUp(() async {
     response = {
@@ -84,17 +85,19 @@ void main() {
   });
 
   group('CharacterDataContainer Json Parser', () {
+    test('[ Data ] should be parsed', () {
+      dataContainer = CharacterDataWrapperModel.fromJson(response);
+      expect(dataContainer, equals(isNotNull));
+    });
+
     test('[ CharacterDataContainer ] should be parsed', () {
       characterDataContainerModel = CharacterDataContainerModel.fromJson(response);
       expect(characterDataContainerModel, equals(isNotNull));
     });
-    test('[ Data ] should be parsed', () {
-      characterDataContainerModel = Data.fromJson(response);
-      expect(dataContainer, equals(isNotNull));
-    });
+
 
     test('CharacterDataContainer array size should be 1 ', () {
-      expect(characterDataContainerModel.results.length, 1);
+      expect(characterDataContainerModel!.results.length, 1);
     });
   });
 }

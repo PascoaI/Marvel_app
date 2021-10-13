@@ -3,7 +3,7 @@ import 'package:marvel_app/src/modules/characters/data/model/characters_model.da
 
 void main() {
   var response;
-  var character;
+  CharacterModel? character;
 
   setUp(() async {
     response = {
@@ -35,16 +35,16 @@ void main() {
     });
 
     test('name should be [B] ', () {
-      expect(character.name, 'B');
+      expect(character!.name, 'B');
     });
 
     test('description should be [C] ', () {
-      expect(character.description, 'C');
+      expect(character!.description, 'C');
     });
 
 
-    test('comics size should be 1 ', () {
-      expect(character.comics.length, 1);
+    test('comics items size should be 1 ', () {
+      expect(character!.comics.items.length, 1);
     });
   });
 }

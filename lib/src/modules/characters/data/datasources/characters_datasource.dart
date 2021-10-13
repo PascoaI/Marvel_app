@@ -14,7 +14,7 @@ class CharacterDataSource implements DataSource {
   Future<BaseModel> call<T>(
       {Map? param, @required FromJson<T>? fromJson}) async {
     _service = GetIt.instance<Service>();
-    String url = 'https://gateway.marvel.com/v1/public/characters/';
+    String url = 'https://gateway.marvel.com/v1/public/characters/$param/';
     var response = await _service.get(url);
     var model = fromJson!(response);
     return model as BaseModel;

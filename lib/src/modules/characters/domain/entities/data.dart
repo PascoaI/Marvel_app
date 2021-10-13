@@ -1,10 +1,12 @@
 import 'package:marvel_app/src/modules/characters/domain/entities/characters.dart';
 
 
-class Data{
+class CharacterDataWrapper{
+  final int code;
+  final String status;
   final CharacterDataContainer data;
 
-  Data(this.data);
+  CharacterDataWrapper(this.code, this.status, this.data);
 }
 
 class CharacterDataContainer {
