@@ -83,6 +83,12 @@ class CharacterViewState extends State<CharacterView>
   }
 
 
+
+
+
+  //TENTANDO BUILD SÓ COM AS VARIAVEIS SIMPLES
+
+
   Widget _firstColumn(CharacterModel char) {
     return Expanded(
       child: Column(

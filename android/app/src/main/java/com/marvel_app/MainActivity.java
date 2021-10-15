@@ -1,4 +1,4 @@
-package package.marvel_app;
+package com.marvel_app;
 
 import io.flutter.embedding.android.FlutterActivity;
 

@@ -65,6 +65,12 @@ class CharacterDetailState extends State<CharacterDetail>
     return Expanded(
       child: ListView(
         children: <Widget>[
+
+
+
+          //TENTANDO BUILD SÓ COM AS VARIAVEIS SIMPLES
+
+
           // _buildImage(),
           // SizedBox(height: 16.0),
           _buildTitle(),

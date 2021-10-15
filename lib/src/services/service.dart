@@ -16,10 +16,9 @@ class Service {
   Future<dynamic> get(String url) async {
     var apiKey = ts.toString() + privateKey + publicKey;
     var hash = md5.convert(utf8.encode(apiKey)).toString();
-
-
     var uri = Uri.parse(
         "$url?ts=$ts&apikey=$publicKey&hash=$hash&limit=10");
+
     try {
       var response = await dio.get(uri.toString());
       return response.data;
